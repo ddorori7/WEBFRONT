@@ -20,6 +20,23 @@
         /* type 속성이 password인 input 태그 선택 */
         background-color: lightblue;
       }
+
+      /* 상태 선택자
+        : 입력폼의 상태에 따른 선택 */
+      input:enabled {
+        /* 입력 가능한 input 태그 선택 */
+        background-color: white;
+      }
+
+      input:disabled {
+        /* 입력 불가능한 input 태그 선택 */
+        background-color: grey;
+      }
+
+      input:focus {
+        /* 초점이 맞춰진 상태의 input 태그 선택 */
+        background-color: orange;
+      }
     </style>
   </head>
   <body>
@@ -46,6 +63,8 @@
           placeholder="비밀번호를 입력해 주세요"
         />
         <br />
+        <label for="code">추천코드</label>
+        <input type="text" name="code" id="code" disabled /><br />
         <!-- (hidden)사용자 입력은 아니지만, 
             폼 처리시 반드시 필요한 값: 개발자 세팅-->
         <input type="hidden" name="secret_code" value="secret" />
