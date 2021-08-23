@@ -36,6 +36,15 @@
       .beverage.red {
         background-color: rgba(255, 0, 0, 0.1);
       }
+
+      /* 자식 선택자 vs 후손 선택자 
+        자식 선택자 > : 직계 후손만 선택
+        후손 선택자 (공백) : 직계 포함한 모든 자손들 
+        */
+      .beverage p {
+        /* beverage 클래스의 후손 p 태그 선택 */
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
