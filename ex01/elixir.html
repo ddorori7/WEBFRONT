@@ -45,6 +45,24 @@
         /* beverage 클래스의 후손 p 태그 선택 */
         font-weight: bold;
       }
+
+      /* 구조 선택자 */
+      .menu > li:first-child {
+        /* .menu 클래스의 자식 li 중에서 첫 번째 자식 */
+        background-color: rgba(0, 255, 0, 0.5);
+      }
+      .menu > li:nth-child(2) {
+        /* .menu 클래스의 자식 li 중에서 2 번째 자식 */
+        background-color: rgba(0, 0, 255, 0.5);
+      }
+      .menu > li:nth-child(3) {
+        /* .menu 클래스의 자식 li 중에서 3 번째 자식 */
+        background-color: rgba(128, 0, 128, 0.5);
+      }
+      .menu > li:last-child {
+        /* .menu 클래스의 자식 li 중에서 마지막 자식 */
+        background-color: rgba(255, 0, 0, 0.5);
+      }
     </style>
   </head>
   <body>
