@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "맑은 고딕", "돋움", monospace;
+  font-size: 0.75em;
+  color: #333;
+}
+
+ul ul {
+  margin-left: 20px;
+  list-style: none;
+}
+
+li {
+  line-height: 1.8em;
+  padding-left: 15px;
+  background-image: url("/practices/images/bullet11.jpg");
+  background-repeat: no-repeat;
+  background-position: 0.8px;
+}
