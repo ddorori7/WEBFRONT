@@ -52,7 +52,19 @@
         */
       .beverage p {
         /* beverage 클래스의 후손 p 태그 선택 */
-        font-weight: bold;
+        /* font-weight 속성: 글꼴의 두께 
+            normal, lighter, bold, bolder */
+        font-weight: lighter;
+        /* font-size 속성: 글꼴의 크기
+            기본 사이즈는 16px
+            절대 크기: px
+            상대 크기: em(배율), %(퍼센트) */
+        font-size: 1.1em; /* 110% 와 동일 */
+      }
+
+      .beverage h2 {
+        font-size: 1.5em;
+        /* 1.5em = 150% = 24px(16px*1.5) */
       }
 
       /* 구조 선택자 */
@@ -71,6 +83,12 @@
       .menu > li:last-child {
         /* .menu 클래스의 자식 li 중에서 마지막 자식 */
         background-color: rgba(255, 0, 0, 0.5);
+      }
+
+      .feature {
+        /* class = feature */
+        /* text-decoration 속성: 줄로 꾸미기 */
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -105,9 +123,9 @@
           <h2>Green Tea Cooler</h2>
           <img src="images/green.jpg" alt="Green Tea Cooler" />
           <p>
-            Chock full of vitamins and minerals, this elixir combines the
-            healthful benefits of green tea with a twist of chamomile blossoms
-            and ginger root.
+            Chock full of <span class="feature">vitamins and minerals</span>,
+            this elixir combines the healthful benefits of green tea with a
+            twist of chamomile blossoms and ginger root.
           </p>
         </div>
       </section>
