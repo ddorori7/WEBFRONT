@@ -1,0 +1,24 @@
+@import url(./main.css);
+
+form#login-form {
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+input[type="image"] {
+  display: block;
+  margin-top: 10px;
+  width: auto;
+  margin-left: 70px;
+}

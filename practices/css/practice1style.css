@@ -1,13 +1,4 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-body {
-  font-family: "맑은 고딕", "돋움", monospace;
-  font-size: 0.75em;
-  color: #333;
-}
+@import url(./main.css);
 
 table.tbl-ex {
   margin-top: 10px;
