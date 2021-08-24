@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Example</title>
+    <style>
+      /* position 속성을 이용 출력 좌표계를 변경 */
+      .container {
+        position: relative;
+        /* absolute를 가지고 있는 것들의 부모요소 */
+        border: 1px solid;
+        margin-top: 10px;
+        height: 100px;
+        /* overflow 속성:
+            자식이 넘쳤을 때 표시를 제어 */
+        /* overflow: hidden; */
+        overflow: scroll;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        /* 기본 좌표계는 static
+            -> absolute 좌표계 변경 */
+        position: absolute;
+        /* 이 요소들을 품고있는 
+            부모계(현재 .container)가 relative 해야함*/
+      }
+
+      .box:nth-child(1) {
+        background-color: red;
+        left: 10px;
+        top: 10px;
+      }
+
+      .box:nth-child(2) {
+        background-color: green;
+        left: 50px;
+        top: 50px;
+        z-index: 10;
+        /* z축의 우선순위를 조정 */
+      }
+
+      .box:nth-child(3) {
+        background-color: blue;
+        left: 90px;
+        top: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML의 기본 출력 방식은 static -->
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
