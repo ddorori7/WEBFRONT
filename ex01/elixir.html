@@ -8,33 +8,42 @@
       /* id 셀렉터: #아이디 */
       #green {
         /* id가 green인 요소*/
-        color: green;
+        color: green; /* 키워드 */
+        color: #008000; /* 실제 값: 16진수 */
       }
       #blue {
         /* id가 blue인 요소*/
-        color: blue;
+        color: blue; /* 키워드 */
+        color: rgb(0, 0, 255); /* 실제 값: rgb함수 */
       }
       #purple {
         /* id가 purple인 요소*/
         color: purple;
+        color: #800080;
       }
       #red {
         /* id가 red인 요소*/
         color: red;
+        color: rgb(255, 0, 0);
       }
       /* class 셀렉터: .클래스명 */
       .beverage.green {
-        /* .beverage, .green 클래스가 and 조건 */
+        /* alpha: 투명도 0.0(투명) ~ 1.0(불투명) */
+        /*.beverage,.green클래스가and조건*/
         background-color: rgba(0, 255, 0, 0.1);
+        background-color: #00ff0020;
       }
       .beverage.blue {
         background-color: rgba(0, 0, 255, 0.1);
+        background-color: #0000ff20;
       }
       .beverage.purple {
         background-color: rgba(128, 0, 128, 0.1);
+        background-color: #80008020;
       }
       .beverage.red {
         background-color: rgba(255, 0, 0, 0.1);
+        background-color: #ff000020;
       }
 
       /* 자식 선택자 vs 후손 선택자 
