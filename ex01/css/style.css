@@ -9,7 +9,7 @@ h1 {
       : 폰트가 없을 경우 대비, 가장 마지막에 
           일반 글꼴을 명시
   */
-  font-family: 궁서체, 신명조, serif;
+  font-family: "궁서체", "신명조", serif;
   background-color: greenyellow;
 }
 
