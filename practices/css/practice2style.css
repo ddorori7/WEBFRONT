@@ -1,6 +1,6 @@
 @import url(./main.css);
 
-ul ul {
+.root ul {
   margin-left: 20px;
   list-style: none;
 }
@@ -10,5 +10,5 @@ li {
   padding-left: 15px;
   background-image: url("/practices/images/bullet11.jpg");
   background-repeat: no-repeat;
-  background-position: 0.8px;
+  background-position: 0 8px;
 }
