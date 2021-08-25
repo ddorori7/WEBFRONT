@@ -7,12 +7,12 @@
   width: 520px;
 }
 
-ul {
+.tab-box ul {
   list-style: none;
   height: 27px;
 }
 
-li {
+.tab-box li {
   float: left;
   width: 100px;
   height: 22px;
@@ -25,14 +25,20 @@ li {
   border-top-right-radius: 10px;
 }
 
-div > div {
-  border: solid;
+.tab-box > div {
+  border: 1px solid black;
   margin-top: -1px;
   text-align: center;
   line-height: 200px;
   width: 516px;
 }
 
-.selected {
+.tab-box .selected {
   background-color: #fc6;
+}
+
+.tab-box li:hover {
+  background-color: yellow;
+  color: grey;
+  cursor: pointer;
 }
