@@ -52,3 +52,42 @@ while (count > 0) {
   console.log(stars);
   count--;
 }
+
+//  ES6: for ... in
+//      객체의 속성(프로퍼티)를 순회
+//  ES6: for ... of
+//      순회 객체의 값을 순회 ex) 배열
+let obj = {
+  name: "홍길동",
+  age: 28,
+  job: "도적",
+  gender: "남성",
+};
+
+console.log("==== for ... in");
+for (let key in obj) {
+  //  for ... in : 객체의 속성을 순회
+  console.log(key, "->", obj[key]);
+}
+// ==== for ... in
+// name -> 홍길동
+// age -> 28
+// job -> 도적
+// gender -> 남성
+
+const arr = [5, 1, 4, 3, 2, 9, 8, 0];
+for (let key in arr) {
+  console.log(key); //  -> 0 1 2 3 4 5 6 7 (배열의 번지(프로퍼티)가 나옴)
+}
+console.log("==== for ... of");
+for (let value of arr) {
+  //  for ... of : 반복 가능 객체에서 요소를 하나씩
+  console.log(value); //    -> 5 1 4 3 2 9 8 0
+}
+
+//  for ... of는 순회 객체(배열 등)에서만 사용
+// for (let value of obj) {
+//   console.log(value);
+// } -> TypeError: obj is not iterable(obj는 순회객체 아님)
+
+//  주의: for ... in과 for ... of 를 구분해서 사용
