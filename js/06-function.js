@@ -68,7 +68,6 @@ function usingCallback(val1, val2, func) {
 usingCallback(7, 5, function (v1, v2) {
   console.log(v1 + v2); //  실행 로직을 주입
 });
-
 usingCallback(7, 5, function (v1, v2) {
   console.log(v1 * v2); //  실행 로직을 호출시 주입
 });
