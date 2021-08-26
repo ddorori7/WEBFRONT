@@ -24,23 +24,6 @@ while (dan <= 9) {
   dan++;
 }
 
-// console.log("==== while 구구단 실험!!");
-// 왜 안되지...?ㅇ.ㅇ
-
-// let dan = 2;
-// let num = 1;
-// while (dan <= 9) {
-//   //  단 루프
-
-//   console.log(dan + "단");
-//   while (num <= 9) {
-//     console.log(`${dan} * ${num} = ${dan * num}`);
-//     num++;
-//   }
-//   console.log();
-//   dan++;
-// }
-
 //  연습문제 2
 //  *****
 //  ****
