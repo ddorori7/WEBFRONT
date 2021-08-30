@@ -6,7 +6,7 @@ function sum(a, b) {
 }
 
 //  함수 호출
-console.log("SUM:", sum(10, 20));
+console.log("SUM:", sum(10, 20)); //  SUM: 30
 
 //  함수 표현식: 이름이 없는 함수 -> 익명 함수
 //  그 자체로 독립된 객체
@@ -15,7 +15,7 @@ console.log("SUM:", sum(10, 20));
 const asum = function (a, b) {
   return a + b;
 };
-console.log(typeof asum, asum(10, 20));
+console.log(typeof asum, asum(10, 20)); //  function 30
 
 //  익명 함수의 활용 1. 즉시 실행 함수
 let initText;
@@ -29,6 +29,8 @@ let initText;
   console.log(`인수 ${number}를 이용하여 즉시 실행하였습니다.`);
 })(5); //   -> 즉시 실행
 console.log(initText);
+// 인수 5를 이용하여 즉시 실행하였습니다.
+// 홀수
 // console.log(textList); -> Error : 스코프가 종료
 
 console.log("====== arguments");
@@ -47,14 +49,16 @@ function gerNumberTotal() {
   }
   return result;
 }
-
 console.log(gerNumberTotal()); //   매개변수 없음
 console.log(gerNumberTotal(1, 2, 3, 4, 5)); //  매개변수 5개
 console.log(gerNumberTotal(1, 2, "3", 4, 5));
+// ====== arguments
+// 0
+// 15
+// 12
 
 console.log("===== Callback");
 //  함수는 문법적 기능이 아니라, 독립된 객체
-
 function usingCallback(val1, val2, func) {
   //  기능을 미정 상태로 두고
   //  함수 호출시 외부로부터 실행 로직을 전달 받아서
@@ -64,13 +68,15 @@ function usingCallback(val1, val2, func) {
     func(val1, val2);
   }
 }
-
 usingCallback(7, 5, function (v1, v2) {
   console.log(v1 + v2); //  실행 로직을 주입
 });
 usingCallback(7, 5, function (v1, v2) {
   console.log(v1 * v2); //  실행 로직을 호출시 주입
 });
+// ===== Callback
+// 12
+// 35
 
 //  화살표 함수 =>
 //  매개변수 없음
@@ -81,6 +87,8 @@ const f1Arrow = () => "hello";
 //  둘이 스코프 this 범위가 다름
 console.log(f1(), typeof f1);
 console.log(f1Arrow(), typeof f1Arrow);
+// hello function
+// hello function
 
 //  매개변수 한개
 const f2 = function (name) {
@@ -90,6 +98,8 @@ const f2Arrow = (name) => "Hello " + name;
 
 console.log(f2("홍길동"), typeof f2);
 console.log(f2Arrow("홍길동"), typeof f2Arrow);
+// Hello 홍길동 function
+// Hello 홍길동 function
 
 //  매개변수 여러개
 const f3 = function (a, b) {
@@ -99,8 +109,10 @@ const f3Arrow = (a, b) => a + b;
 
 console.log(f3(7, 5));
 console.log(f3Arrow(7, 5));
+// 12
+// 12
 
 //  콜백함수를 전달할 때 활용
 usingCallback(10, 20, (v1, v2) => {
   console.log(v1 + v2);
-});
+}); //  30

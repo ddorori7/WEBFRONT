@@ -53,18 +53,18 @@ arr[10] = 2021;
 console.log(arr, arr.length); //  [ <10 empty items>, 2021 ] 11
 
 console.log("======= 배열의 메서드");
-const veges = ["배추", "무", " 쪽파"];
+const veges = ["배추", "무", "쪽파"];
 const sources = ["소금", "고춧가루", "새우젓"];
 
-console.log(veges, sources); // [ '배추', '무', ' 쪽파' ] [ '소금', '고춧가루', '새우젓' ]
+console.log(veges, sources); // [ '배추', '무', '쪽파' ] [ '소금', '고춧가루', '새우젓' ]
 
 //  배열 합치기
 const items = veges.concat(sources);
-console.log("CONCAT:", items); // CONCAT: [ '배추', '무', ' 쪽파', '소금', '고춧가루', '새우젓' ]
+console.log("CONCAT:", items); // CONCAT: [ '배추', '무', '쪽파', '소금', '고춧가루', '새우젓' ]
 
 //  배열 요소 합치기: join
 console.log("JOIN:", items.join(",")); // 요소들 ,로 합치기
-// -> JOIN: 배추,무, 쪽파,소금,고춧가루,새우젓
+// -> JOIN: 배추,무,쪽파,소금,고춧가루,새우젓
 
 //  push: 배열 맨 뒤에 새 요소 추가
 //  pop: 배열 맨 뒤 요소를 추출 후 제거
@@ -133,7 +133,8 @@ fruits.sort(function (v1, v2) {
   if (v1 < v2) return 1; // v1이 순서가 뒤
   if (v1 > v2) return -1; // v1이 순서가 앞
 });
-console.log("SORT(User Defined):", fruits); //  SORT(User Defined): [ 'Orange', 'Mango', 'Banana', 'Apple' ]
+console.log("SORT(User Defined):", fruits);
+//  SORT(User Defined): [ 'Orange', 'Mango', 'Banana', 'Apple' ]
 
 //  split: 특정 구분자를 기준으로 문자열 분리 -> Arrays 반환
 const str = "JavaScript is something strange than other languages";

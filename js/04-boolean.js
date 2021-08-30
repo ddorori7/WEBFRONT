@@ -3,7 +3,8 @@
 //  논리 조합: AND(논리곱: &&) , OR(논리합: ||), NOT(논리 부정: !)
 let v1; //  선언하되 초기화 되지 않음 -> undefined
 let v2 = null; //   선언하고 null로 초기화 -> null
-console.log(typeof v1, typeof v2); //   undefined object(버그라고함.null임-타입이면서 특수한 개체)
+console.log(typeof v1, typeof v2);
+//  undefined object(버그라고함.null임-타입이면서 특수한 개체)
 //  undefined : 자바스크립트 엔진에 허용된 데이터
 //  null : 개발자에게 허용된 타입
 
