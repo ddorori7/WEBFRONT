@@ -1,4 +1,4 @@
-// JavaScript의 Numger
+// JavaScript의 Number
 // int, float 가리지 않음, 산술 연산 가능
 let n1 = 2021; // Literal
 let n2 = Number(2021); // Number 객체를 이용 생성
