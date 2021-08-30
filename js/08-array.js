@@ -134,3 +134,41 @@ fruits.sort(function (v1, v2) {
   if (v1 > v2) return -1; // v1이 순서가 앞
 });
 console.log("SORT(User Defined):", fruits); //  SORT(User Defined): [ 'Orange', 'Mango', 'Banana', 'Apple' ]
+
+//  split: 특정 구분자를 기준으로 문자열 분리 -> Arrays 반환
+const str = "JavaScript is something strange than other languages";
+let chunks = str.split(" "); // 공백으로 분리
+console.log("SPLIT:", chunks);
+// SPLIT: [
+//   'JavaScript',
+//   'is',
+//   'something',
+//   'strange',
+//   'than',
+//   'other',
+//   'languages'
+// ]
+
+// loop 1:
+for (let i = 0; i < chunks.length; i++) {
+  console.log("WORD:", chunks[i]);
+}
+// WORD: JavaScript
+// WORD: is
+// WORD: something
+// WORD: strange
+// WORD: than
+// WORD: other
+// WORD: languages
+
+//  loop2: for ... of
+for (let word of chunks) {
+  console.log("for of:", word);
+}
+// for of: JavaScript
+// for of: is
+// for of: something
+// for of: strange
+// for of: than
+// for of: other
+// for of: languages
