@@ -139,6 +139,9 @@ function testReduce() {
   let sum = source.reduce((acc, value, idx, arr) => {
     console.log(`이전 값은 ${acc}`);
     console.log(`${arr}의 ${idx}번째 요소는 ${value}`);
+
+    //  직전 누산값과 현재 누산값을 연산하여 리턴
+    return acc + value;
     // 이전 값은 0
     // 12,4,19,33,86의 0번째 요소는 12
     // 이전 값은 12
@@ -149,9 +152,6 @@ function testReduce() {
     // 12,4,19,33,86의 3번째 요소는 33
     // 이전 값은 68
     // 12,4,19,33,86의 4번째 요소는 86
-
-    //  직전 누산값과 현재 누산값을 연산하여 리턴
-    return acc + value;
   }, 0); // 초깃값은 0으로 설정되어 있음
 
   console.log("원본:", source);
@@ -185,6 +185,7 @@ function testReduce2() {
     // 86는 짝수
   }, []);
   console.log(result);
+  //  [ '짝수', '짝수', '홀수', '홀수', '짝수' ]
 }
 // testReduce2();
 

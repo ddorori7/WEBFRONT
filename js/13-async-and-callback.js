@@ -1,16 +1,16 @@
 function logicA() {
-  console.log("begin logicA");
+  console.log("begin logicA"); // 1
 
   setTimeout(() => {
-    console.log("callbackA called");
-    console.log("begin logicB");
+    console.log("callbackA called"); // 3
+    console.log("begin logicB"); // 4
     setTimeout(() => {
-      console.log("callbackB called");
+      console.log("callbackB called"); // 6
     }, 2000);
-    console.log("end logicB");
+    console.log("end logicB"); // 5
   }, 2000); //    2초 후에 콜백함수 수행
 
-  console.log("end logicA");
+  console.log("end logicA"); // 2
 }
 // logicA();
 // begin logicA
@@ -48,7 +48,7 @@ function testLogicPromise() {
       console.error("PROMISE FAILED:", reason);
     });
 }
-testLogicPromise();
+// testLogicPromise();
 /* <resolve일때> - 성공했을 때
 Test logic Promise
 begin logicPromise
@@ -63,12 +63,13 @@ PROMISE FAILED: REJECTED!
 */
 
 //  async/await는 Promise를 좀 더 쉽게 다룰 수 있도록 해줌
+//  function 앞에 async를 붙이면 해당 함수는 항상 프라미스를 반환
 async function asyncFunc() {
   console.log("async function");
   return "SUCCESS";
 }
 
 //  async 함수는 항상 Promise를 리턴함
-// asyncFunc().then((value) => console.log(value)); // 성공시의 처리
+asyncFunc().then((value) => console.log(value)); // 성공시의 처리
 // async function
 // SUCCESS
