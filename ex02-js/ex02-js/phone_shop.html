@@ -30,10 +30,13 @@
 
   <body>
     <div id="product-info">
+      <!-- 태그에 이벤트 리스너를 붙이는 방법:
+            Inline JavaScript: 추천하지 않음 -->
       <img
         id="main-image"
         src="images/iphone-xs.jpeg"
         class="selected"
+        onclick="alert(this.title)"
         title="iPhones XS"
       />
       <h2>iPhone Xs</h2>
@@ -103,7 +106,42 @@
         subs[i].setAttribute("title", "사진:" + subs[i].getAttribute("title"));
       }
     }
-    testAttributes();
+    // testAttributes();
     // title속성 -> 마우스 이미지 위에 올렸을때!
+
+    //  이벤트 붙이기 두번째 방식
+    document.getElementById("main-image").onclick = function (event) {
+      console.log(event); //    이벤트 객체
+      console.log("이벤트 이름:", event.name);
+      console.log("이벤트 발생 객체:", event.target);
+      //  이벤트 발생 객체: event.target
+      alert(event.target.title);
+    };
+    //  키보드 이벤트
+    // .onkeypress = function (event){ -> 한글키가 안먹음..
+    //  keyup -> 키보드에서 손을 뗄때
+    document.getElementById("keyword").onkeyup = function (event) {
+      console.log(event); //    이벤트 정보
+      console.log(event.target); // 이벤트를 발생시킨 객체
+      console.log("눌러진 키:", event.keyCode);
+
+      let btn = document.querySelector("#btn-search");
+      btn.innerText = event.target.value + "검색";
+    };
+
+    //  이벤트 리스너 부착: 가장 추천하는 방식
+    window.addEventListener("load", function (event) {
+      //  load 이벤트 -> 주로 페이지 초기화를 담당
+
+      //  키보드 이벤트
+      document.getElementById("keyword").onkeyup = function (event) {
+        console.log(event); //  이벤트 정보
+        console.log(event.target); //  이벤트 발생시킨 객체
+        console.log("눌러진 키:", event.keyCode);
+
+        let btn = document.querySelector("#btn-search");
+        btn.innerText = event.target.value + " :검색";
+      };
+    });
   </script>
 </html>
