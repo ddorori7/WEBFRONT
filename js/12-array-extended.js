@@ -29,7 +29,6 @@ function testForEach() {
   //   배열 Banana,Orange,Apple,Mango의 2번째 요소 Apple
   //   배열 Banana,Orange,Apple,Mango의 3번째 요소 Mango
 }
-
 // testForEach();
 
 function testSome() {
@@ -56,7 +55,7 @@ function testSome() {
   console.log("------- some: age > 25 ?", result);
   // ------- some: age > 25 ? true
 }
-testSome();
+// testSome();
 
 function testEvery() {
   let data = [
@@ -81,4 +80,51 @@ function testEvery() {
   console.log("------- every: age > 25 ?", result);
   // ------- every: age > 25 ? false
 }
-testEvery();
+// testEvery();
+
+function testFilter() {
+  console.log("----- Filter");
+
+  let source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  //  source에서 짝수요소만 필터링 해보자
+
+  //  기존 방식
+  let result = [];
+  for (let i = 0; i < source.length; i++) {
+    //  판별
+    if (source[i] % 2 == 0) {
+      result.push(source[i]);
+    }
+  }
+  console.log("원본:", source);
+  console.log("짝수 필터링:", result);
+  // 원본: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+  // 짝수 필터링: [ 2, 4, 6, 8, 10 ]
+
+  //  ES6
+  result = source.filter((item) => item % 2 == 0);
+  console.log("짝수 필터링(filter):", result);
+  // 짝수 필터링(filter): [ 2, 4, 6, 8, 10 ]
+}
+// testFilter();
+
+function testMap() {
+  console.log("===== map");
+  let source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log("원본:", source);
+
+  //  모든 요소를 *2한 새 배열을 만들어라
+  //  기존 방식
+  let multiply = [];
+  for (let i = 0; i < source.length; i++) {
+    multiply.push(source[i] * 2);
+  }
+  console.log("요소 계산:", multiply);
+  // 요소 계산: [2,  4,  6,  8, 10, 12, 14, 16, 18, 20]
+
+  //  ES6  map 함수 활용
+  multiply = source.map((item) => item * 2);
+  console.log("배열 곱셈(map):", multiply);
+  // 배열 곱셈(map): [2,  4,  6,  8, 10, 12, 14, 16, 18, 20]
+}
+testMap();
