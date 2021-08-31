@@ -127,4 +127,63 @@ function testMap() {
   console.log("배열 곱셈(map):", multiply);
   // 배열 곱셈(map): [2,  4,  6,  8, 10, 12, 14, 16, 18, 20]
 }
-testMap();
+// testMap();
+
+function testReduce() {
+  let source = [12, 4, 19, 33, 86];
+  //  callback
+  //      acc: 직전까지의 누산값
+  //      value: 현재요소의 값
+  //      idx: 현재요소의 인덱스
+  //      arr: 누산에 사용되는 배열 자체
+  let sum = source.reduce((acc, value, idx, arr) => {
+    console.log(`이전 값은 ${acc}`);
+    console.log(`${arr}의 ${idx}번째 요소는 ${value}`);
+    // 이전 값은 0
+    // 12,4,19,33,86의 0번째 요소는 12
+    // 이전 값은 12
+    // 12,4,19,33,86의 1번째 요소는 4
+    // 이전 값은 16
+    // 12,4,19,33,86의 2번째 요소는 19
+    // 이전 값은 35
+    // 12,4,19,33,86의 3번째 요소는 33
+    // 이전 값은 68
+    // 12,4,19,33,86의 4번째 요소는 86
+
+    //  직전 누산값과 현재 누산값을 연산하여 리턴
+    return acc + value;
+  }, 0); // 초깃값은 0으로 설정되어 있음
+
+  console.log("원본:", source);
+  console.log("누계값(reduce):", sum);
+  // 원본: [ 12, 4, 19, 33, 86 ]
+  // 누계값(reduce): 154
+}
+// testReduce();
+
+function testReduce2() {
+  //  map 함수를 reduce 함수로 시뮬레이션
+  let source = [12, 4, 19, 33, 86];
+  //  요소를 받아와서 짝수면 짝수, 홀수면 홀수
+  //  내부 요소를 변경
+  console.log("원본:", source);
+  let result = source.reduce((acc, value) => {
+    console.log(`현재 누산기: ${acc}`);
+    console.log(`${value}는 ${value % 2 == 0 ? "짝수" : "홀수"}`);
+    acc.push(value % 2 == 0 ? "짝수" : "홀수");
+
+    return acc;
+    // 현재 누산기:
+    // 12는 짝수
+    // 현재 누산기: 짝수
+    // 4는 짝수
+    // 현재 누산기: 짝수,짝수
+    // 19는 홀수
+    // 현재 누산기: 짝수,짝수,홀수
+    // 33는 홀수
+    // 현재 누산기: 짝수,짝수,홀수,홀수
+    // 86는 짝수
+  }, []);
+  console.log(result);
+}
+testReduce2();
