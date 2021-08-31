@@ -186,4 +186,23 @@ function testReduce2() {
   }, []);
   console.log(result);
 }
-testReduce2();
+// testReduce2();
+
+function filterMapReduce() {
+  let source = [12, 7, 3, 8, 4, 9, 6, 2, 15, 14];
+  /* 목표
+  source 배열에서 짝수만 필터링 : .filter
+  내부 요소를 2배 : .map
+  합산 : .reduce
+  */
+
+  let result = source
+    .filter((item) => item % 2 == 0)
+    .map((item) => item * 2)
+    .reduce((acc, value) => {
+      return acc + value;
+    });
+  console.log("Result:", result);
+  // Result: 92
+}
+filterMapReduce();
