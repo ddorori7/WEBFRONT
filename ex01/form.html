@@ -41,12 +41,13 @@
     <script>
       function checkForm() {
         //  폼 name으로 식별
-        let frm = document.registerForm;
+        // let frm = document.registerForm;
+        let frm = document.getElementById("myform");
         console.log(frm);
 
         //  userid 검증
         let userid = frm.userid.value.trim();
-        //  길이 비교 4  ~10 글자
+        //  길이 비교 4  ~ 10 이하 검증
         if (userid.length < 4 || userid.length > 10) {
           //  검증 실패
           alert("사용자 아이디는 4자 이상," + "10자 이하로 해 주세요");
@@ -72,19 +73,21 @@
             checkedCount++;
           }
         }
+
         if (checkedCount === 0) {
           alert("최소 1개 이상의 음료를 선택해야 합니다.");
           return false;
         }
 
-        //  통신사 선택(Select)
+        //  통신사 선택 - Select
         //  선택된 것의 인덱스 확인
         let selectedIndex = frm.telecom.selectedIndex;
         console.log("Selected Index:", selectedIndex);
         let option = frm.telecom[selectedIndex];
         alert("선택 통신사:", option.value);
+        //  option.value값이 안뜸 확인하기
 
-        return true;
+        return false;
       }
     </script>
   </head>
@@ -94,6 +97,7 @@
       name="registerForm"
       method="POST"
       action="/register"
+      id="myform"
       onsubmit="return checkForm();"
     >
       <!-- onsubmit이 false를 리턴하면 폼 전송하지 않음 -->
