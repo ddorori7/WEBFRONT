@@ -83,10 +83,10 @@
         let selectedIndex = frm.telecom.selectedIndex;
         console.log("Selected Index:", selectedIndex);
         let option = frm.telecom[selectedIndex];
-        alert("선택 통신사:", option.value);
-        // 얘 왜 안뜨지
+        alert("선택 통신사:" + option.innerText);
 
         return true;
+        // return false;
       }
     </script>
   </head>
