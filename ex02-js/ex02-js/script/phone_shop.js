@@ -75,11 +75,16 @@ window.addEventListener("load", function (event) {
       //  이벤트 발생 객체 검색
       let obj = event.target;
       let mainImage = document.getElementById("main-image");
-      mainImage.setAttribute("src", obj.getAttribute("src"));
-      mainImage.setAttribute("title", obj.getAttribute("title"));
+      // mainImage.setAttribute("src", obj.getAttribute("src")); 아래와 같음
+      mainImage["src"] = obj["src"];
+      // mainImage.setAttribute("title", obj.getAttribute("title")); 아래와 같음
+      mainImage["title"] = obj["title"];
 
       let title = document.querySelector("#product-info h2");
       title.innerText = obj.getAttribute("title");
+      //  스타일 속성 사용("data-color" -> 사용자 정의 속성)
+      console.log(obj.getAttribute("data-color"));
+      title.style.backgroundColor = obj.getAttribute("data-color");
     });
   }
 });
