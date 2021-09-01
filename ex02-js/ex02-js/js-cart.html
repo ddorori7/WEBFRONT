@@ -41,6 +41,27 @@
         let itemNode = document.createElement("li");
         //  속성과 콘텐츠 설정
         itemNode.innerHTML = item;
+
+        let toolbar = document.createElement("div");
+        toolbar.style.display = "inline";
+        let delBtn = document.createElement("button");
+        delBtn.innerText = "삭제";
+        delBtn.style.cssFloat = "right";
+
+        delBtn.addEventListener("click", function (event) {
+          console.log(event);
+          //    삭제할 요소
+          let removeItem = event.target.parentNode.parentNode;
+          console.log("삭제할 요소:", removeItem);
+          //    부모 요소 찾기
+          let parent = removeItem.parentNode;
+
+          //    부모로부터 자식을 분리
+          parent.removeChild(removeItem);
+        });
+        toolbar.appendChild(delBtn);
+        itemNode.appendChild(toolbar);
+
         //  트리에 추가
         container.appendChild(itemNode);
       }
@@ -52,6 +73,11 @@
     window.addEventListener("load", function (event) {
       //  추가 버튼을 눌렀을 때의 이벤트 연결
       document.getElementById("btn-add").addEventListener("click", addItem);
+      //    리스트 초기화
+      let items = document.querySelectorAll("#list > li");
+      for (let i = 0; i < items.length; i++) {
+        items[i].parentNode.removeChild(items[i]);
+      }
     });
   </script>
 </html>
