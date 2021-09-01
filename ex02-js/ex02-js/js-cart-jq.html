@@ -32,6 +32,7 @@
     </div>
     <div id="footer">&copy;Bit Academy</div>
   </body>
+  <!-- JS vs jQuery -->
   <script>
     function addItem(event) {
       console.log(event);
@@ -95,10 +96,9 @@
 
       // itemInput.value = "";
       // itemInput.focus();
-      itemInput.val("");
+      itemInput.val(""); // $("#item");
       itemInput.focus();
     }
-
     // window.addEventListener("load", function (event) {
     $(document).ready(function (event) {
       //  추가 버튼을 눌렀을 때의 이벤트 연결

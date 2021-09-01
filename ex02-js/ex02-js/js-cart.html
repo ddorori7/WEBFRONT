@@ -26,6 +26,7 @@
     </div>
     <div id="footer">&copy;Bit Academy</div>
   </body>
+  <!-- JS -->
   <script>
     function addItem(event) {
       console.log(event);
@@ -51,16 +52,18 @@
         delBtn.addEventListener("click", function (event) {
           console.log(event);
           //    삭제할 요소
-          let removeItem = event.target.parentNode.parentNode;
+          let removeItem = event.target.parentNode.parentNode; // <li>
           console.log("삭제할 요소:", removeItem);
           //    부모 요소 찾기
-          let parent = removeItem.parentNode;
+          let parent = removeItem.parentNode; //  <ul id="list">
 
           //    부모로부터 자식을 분리
           parent.removeChild(removeItem);
         });
+
         toolbar.appendChild(delBtn);
         itemNode.appendChild(toolbar);
+        // li(itemNode) > div(toolbar) > button(delBtn->event.target) 인 구조
 
         //  트리에 추가
         let firstItem = container.children[0];
