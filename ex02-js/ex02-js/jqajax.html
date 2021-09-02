@@ -36,21 +36,15 @@
           dataType: "json",
           success: function (response) {
             console.log(response);
-
             movies = response.movies; //  배열
-
             for (let i = 0; i < movies.length; i++) {
               //  개별 영화 정보
               let movie = movies[i];
-
               let title = movie.title;
               let director = movie.director;
               let movieId = movie.id;
-
               let image = "http://localhost:3000/images/" + movie.image;
-
               console.log(title, director, movieId, image);
-
               let tr = $("<tr>");
               let htmlString = `
                             <td><img class='poster' src='${image}'></td>
@@ -58,7 +52,6 @@
                             <td>${director}</td>
                             `;
               tr.html(htmlString);
-
               //  테이블에 자식 노드로 추가
               $("#list").append(tr);
             }
