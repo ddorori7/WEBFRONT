@@ -7,6 +7,51 @@
     <title>Document</title>
     <!-- 기본 스타일 시트 -->
     <link rel="stylesheet" href="./css/responsive_basic_style.css" />
+    <style>
+      /* 태블릿 - 768px */
+      @media screen and (min-width: 768px) {
+        header {
+          height: 400px;
+        }
+        #intro,
+        #section1 {
+          float: left;
+          width: 43%;
+          margin: 0;
+        }
+        #section2 {
+          clear: left;
+        }
+        .photo {
+          display: block;
+        }
+        .content img {
+          width: 50%;
+          float: left;
+          margin: 10px;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        header {
+          height: 500px;
+        }
+        .content .text {
+          font-size: 1.5em;
+        }
+        #intro,
+        #section1 {
+          float: none;
+          width: 100%;
+        }
+        section:nth-child(2n) img {
+          float: left;
+        }
+        section:nth-child(2n + 1) img {
+          float: right;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="container">
