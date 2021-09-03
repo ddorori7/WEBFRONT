@@ -56,3 +56,10 @@ console.log(v, "=>", typeof v);
 // 다른 데이터 타입 할당
 v = 2021;
 console.log(v, "=>", typeof v);
+
+var queue = [];
+queue.push(1);
+queue.push(5);
+queue.push(3);
+queue.shift();
+console.log(queue[1]);
